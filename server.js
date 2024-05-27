@@ -43,7 +43,7 @@ app.post('/creardeporte',(req,res)=>{
     
     try {
 
-        let ArrayDeportes = JSON.parse(fs.readFileSync("deportes.json", "utf8"));
+        let ArrayDeportes = JSON.parse(fs.readFileSync("tmp/deportes.json", "utf8"));
         let nombreFiltrado = ArrayDeportes.filter(depo => depo.deporte == nombredeporte);
 
         if( nombreFiltrado.length > 0){
@@ -61,7 +61,7 @@ app.post('/creardeporte',(req,res)=>{
                  precio:preciodeporte
             });
 
-            fs.writeFileSync("deportes.json",JSON.stringify(ArrayDeportes))
+            fs.writeFileSync("tmp/deportes.json",JSON.stringify(ArrayDeportes))
 
             console.log(chalk.bgYellow.red(`"${nombredeporte}", Creado correctamente en sistema.`))
 
