@@ -1,0 +1,21 @@
+{
+  "name": "club-deportivo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "server.js.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "chalk": "^4.1.2",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.1"
+  }
+}

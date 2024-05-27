@@ -1,0 +1,27 @@
+<form action="/modificardeporte" method="post"  class="p-4 bg-secondary-subtle rounded-3">
+
+    <div class="mb-3">
+        <label for="deportes1" class="form-label">Nombre</label>
+        <select name="deportes1" class="form-select">
+
+        <option selected disabled>Seleccione un Deporte</option>
+
+          {{#each deportes}}
+               <option  name={{this.deporte}} value={{this.precio}} >{{this.deporte}}</option>    
+          {{/each}}        
+        
+        </select>
+  </div>
+
+  <div class="mb-3">    
+    <input type="hidden" class="form-control" id="nombredeporte" name="nombredeporte">    
+  </div>
+  
+  <div class="mb-3">
+    <label for="preciodeporte" class="form-label">Precio</label>
+    <input type="text" class="form-control" id="preciodeporte" name="preciodeporte" required>
+  </div>
+  
+  <button type="submit" class="btn btn-secondary">Actualizar</button>
+
+</form>
