@@ -4,7 +4,7 @@ function listardeportes(){
 
     try {
 
-        const data = JSON.parse(fs.readFileSync("/tmp/deportes.json", "utf8"));
+        const data = JSON.parse(fs.readFileSync("deportes.json", "utf8"));
         return data;
 
     } catch (error) {
