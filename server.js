@@ -74,7 +74,7 @@ app.post('/creardeporte',(req,res)=>{
     } catch (error) {
 
         let vacio = []
-        fs.writeFileSync("/tmp/deportes.json",JSON.stringify(ArrayDeportes))
+        fs.writeFileSync("/tmp/deportes.json",JSON.stringify(vacio))
         console.log('Error al leer el archivo',error);      
     }    
 
