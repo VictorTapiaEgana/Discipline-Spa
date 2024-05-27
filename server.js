@@ -86,13 +86,13 @@ app.post('/modificardeporte',(req,res)=>{
    const { nombredeporte, preciodeporte } = req.body
 
    try {
-       let ArrayDeportes = JSON.parse(fs.readFileSync("deportes.json", "utf8"));    
+       let ArrayDeportes = JSON.parse(fs.readFileSync("/tmp/deportes.json", "utf8"));    
 
        var IndiceDeporte = ArrayDeportes.map(depo => depo.deporte).indexOf(nombredeporte)
 
        ArrayDeportes[IndiceDeporte].precio= preciodeporte
 
-       fs.writeFileSync("deportes.json",JSON.stringify(ArrayDeportes))
+       fs.writeFileSync("/tmp/deportes.json",JSON.stringify(ArrayDeportes))
 
        console.log(chalk.bgCyanBright.black(`Precio de "${nombredeporte}", Actualizado correctamente.`))
         
@@ -114,13 +114,13 @@ app.post('/eliminardeporte',(req,res)=>{
 
     try {
 
-        let ArrayDeportes = JSON.parse(fs.readFileSync("deportes.json", "utf8"));    
+        let ArrayDeportes = JSON.parse(fs.readFileSync("/tmp/deportes.json", "utf8"));    
 
         var IndiceDeporte = ArrayDeportes.map(depo => depo.deporte).indexOf(nombredeporte)
 
         ArrayDeportes.splice(IndiceDeporte,1);
 
-        fs.writeFileSync("deportes.json",JSON.stringify(ArrayDeportes))
+        fs.writeFileSync("/tmp/deportes.json",JSON.stringify(ArrayDeportes))
 
         console.log(chalk.bgRed.yellow(`"${nombredeporte}", ELIMINADO correctamente.`))
 
